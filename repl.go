@@ -14,10 +14,6 @@ type cliCommand struct {
 	callback    func(*config) error
 }
 
-type config struct {
-	registry map[string]cliCommand
-}
-
 func startrepl(cfg *config) {
 	scanner := bufio.NewScanner(os.Stdin)
 

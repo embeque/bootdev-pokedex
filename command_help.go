@@ -12,7 +12,7 @@ Usage:
 
 func HelpAction(cfg *config) error {
 	updateHelp(cfg.registry)
-	fmt.Printf(HELP)
+	fmt.Print(HELP)
 	return nil
 }
 
