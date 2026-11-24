@@ -4,6 +4,7 @@ import "fmt"
 
 func print_pokemon_info(info pokemonInfo) {
 	fmt.Printf("Name: %s\n", info.Name)
+	fmt.Printf("Experience: %d\n", info.BaseExperience)
 	fmt.Printf("Height: %d\n", info.Height)
 	fmt.Printf("Weight: %d\n", info.Weight)
 	fmt.Println("Stats:")
