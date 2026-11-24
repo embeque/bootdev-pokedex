@@ -17,6 +17,7 @@ type config struct {
 	Cache     pokecache.Cache
 	logger    *slog.Logger
 	arguments []string
+	personXp  int
 }
 
 func main() {
@@ -39,6 +40,11 @@ func main() {
 			description: "Explore the given Area for Pokemons",
 			callback:    ExploreAction,
 		},
+		"catch": {
+			name:        "catch",
+			description: "Catch the given Pokemon",
+			callback:    CatchAction,
+		},
 		"help": {
 			name:        "help",
 			description: "Displays a help message",
@@ -59,7 +65,7 @@ func main() {
 	cfg.Cache = pokecache.NewCache(time.Minute * 5)
 
 	// logger
-	file, err := os.OpenFile("requests.log", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
+	file, err := os.OpenFile("logs/requests.log", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
 	if err != nil {
 		panic(err)
 	}
@@ -74,6 +80,9 @@ func main() {
 	// Optional: set as the global default logger
 	slog.SetDefault(logger)
 	cfg.logger = logger
+
+	// experience
+	cfg.personXp = 0
 
 	startrepl(&cfg)
 }

@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-type Area struct {
+type area struct {
 	EncounterAreas []struct {
 		Pokemon struct {
 			Name string `json:"name"`
@@ -14,16 +14,16 @@ type Area struct {
 	} `json:"pokemon_encounters"`
 }
 
-func getPokemonsArea(data []byte) (Area, error) {
-	var area Area
+func getPokemonsArea(data []byte) (area, error) {
+	var area area
 	err := json.Unmarshal(data, &area)
 	if err != nil {
-		return area, fmt.Errorf("DecodingError: %v", err)
+		return area, fmt.Errorf("DecodingError: %v\n", err)
 	}
 	return area, nil
 }
 
-func print_pokemons(area Area) {
+func print_pokemons(area area) {
 	for _, encounter := range area.EncounterAreas {
 		fmt.Printf("- %s\n", encounter.Pokemon.Name)
 	}

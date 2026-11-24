@@ -19,17 +19,17 @@ func getBytes(url string) ([]byte, error) {
 
 	res, err := http.Get(url)
 	if err != nil {
-		return data, fmt.Errorf("RequestError: %v", err)
+		return data, fmt.Errorf("RequestError: %v\n", err)
 	}
 	defer res.Body.Close()
 
 	if res.StatusCode != http.StatusOK {
-		return data, fmt.Errorf("API returned status: %s", res.Status)
+		return data, fmt.Errorf("API returned status: %s\n", res.Status)
 	}
 
 	data, err = io.ReadAll(res.Body)
 	if err != nil {
-		return data, fmt.Errorf("ResponseReadingError: %v", err)
+		return data, fmt.Errorf("ResponseReadingError: %v\n", err)
 	}
 
 	return data, nil
@@ -39,7 +39,7 @@ func getLocation(data []byte) (locationData, error) {
 	var location locationData
 	err := json.Unmarshal(data, &location)
 	if err != nil {
-		return location, fmt.Errorf("DecodingError: %v", err)
+		return location, fmt.Errorf("DecodingError: %v\n", err)
 	}
 
 	// fmt.Printf("Got the data: %+v\n", location)

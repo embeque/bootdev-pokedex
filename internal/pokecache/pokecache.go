@@ -1,6 +1,7 @@
 package pokecache
 
 import (
+	"os"
 	"sync"
 	"time"
 )
@@ -26,6 +27,7 @@ func reapLoop(interval time.Duration, cache *Cache) {
 			}
 		}
 	}
+	os.Exit(0)
 
 }
 

@@ -42,11 +42,11 @@ func TestAdd(t *testing.T) {
 		expected := c.value
 		actual, ok := cache.data[c.key]
 		if !ok {
-			t.Fatalf("Test %d: Insertion Failed: Key %s not added in Cache Data", i, c.key)
+			t.Fatalf("Test %d: Insertion Failed: Key %s not added in Cache Data\n", i, c.key)
 		}
 
 		if string(actual.val) != string(expected) {
-			t.Fatalf("Test %d: Assertion Failed: (got: %s, expected: %s)", i, string(actual.val), string(expected))
+			t.Fatalf("Test %d: Assertion Failed: (got: %s, expected: %s)\n", i, string(actual.val), string(expected))
 		}
 	}
 }
@@ -69,13 +69,13 @@ func TestGet(t *testing.T) {
 		// ooperation
 		actual, ok := cache.Get(c.key)
 		if !ok {
-			t.Fatalf("Test %d: Extraction Failed: Key %s not present in Cache Data", i, c.key)
+			t.Fatalf("Test %d: Extraction Failed: Key %s not present in Cache Data\n", i, c.key)
 		}
 
 		expected := c.expected
 
 		if string(actual) != string(expected) {
-			t.Fatalf("Test %d: Assertion Failed: (got: %s, expected: %s)", i, string(actual), string(expected))
+			t.Fatalf("Test %d: Assertion Failed: (got: %s, expected: %s)\n", i, string(actual), string(expected))
 		}
 	}
 }
@@ -92,11 +92,11 @@ func TestExpiry(t *testing.T) {
 	time.Sleep(time.Second * 5)
 	actual := len(cache.data)
 	if actual >= 3 {
-		t.Fatalf("Expiration Error: values should expire got %d", actual)
+		t.Fatalf("Expiration Error: values should expire got %d\n", actual)
 	}
 	time.Sleep(time.Second * 12)
 	actual = len(cache.data)
 	if actual != 0 {
-		t.Fatalf("Expiration Error: values should expire got %d", actual)
+		t.Fatalf("Expiration Error: values should expire got %d\n", actual)
 	}
 }
