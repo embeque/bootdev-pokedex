@@ -34,6 +34,7 @@ func startrepl(cfg *config) {
 			continue
 		}
 
+		cfg.arguments = cmdlist[1:]
 		err := value.callback(cfg)
 		if err != nil {
 			fmt.Printf("ActionError: %s", err)

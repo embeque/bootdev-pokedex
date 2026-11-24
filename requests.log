@@ -1,5 +1,1 @@
-{"time":"2026-11-24T17:03:54.255505596+05:00","level":"INFO","msg":"URL Request: https://pokeapi.co/api/v2/location-area?offset=0&limit=20"}
-{"time":"2026-11-24T17:03:56.060778531+05:00","level":"INFO","msg":"URL Request: https://pokeapi.co/api/v2/location-area?offset=20&limit=20"}
-{"time":"2026-11-24T17:03:57.636645145+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/location-area?offset=0&limit=20"}
-{"time":"2026-11-24T17:04:07.481845461+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/location-area?offset=20&limit=20"}
-{"time":"2026-11-24T17:04:09.525799726+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/location-area?offset=0&limit=20"}
+{"time":"2026-11-24T18:34:24.157445291+05:00","level":"INFO","msg":"URL Request: https://pokeapi.co/api/v2/location-area/pastoria-city-area"}

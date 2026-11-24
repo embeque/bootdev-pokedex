@@ -35,7 +35,7 @@ func getBytes(url string) ([]byte, error) {
 	return data, nil
 }
 
-func getJSON(data []byte) (locationData, error) {
+func getLocation(data []byte) (locationData, error) {
 	var location locationData
 	err := json.Unmarshal(data, &location)
 	if err != nil {
@@ -53,22 +53,22 @@ func print_locations(locations []map[string]string) {
 	}
 }
 
-func ActionNextMap(cfg *config) error {
-	key := cfg.Next
+func NextMapAction(cfg *config) error {
+	url := cfg.Next
 	var err error
 
-	data, ok := cfg.Cache.Get(key)
+	data, ok := cfg.Cache.Get(url)
 	if !ok {
-		cfg.logger.Info("URL Request: " + key)
-		data, err = getBytes(key)
-		cfg.Cache.Add(key, data)
+		cfg.logger.Info("URL Request: " + url)
+		data, err = getBytes(url)
+		cfg.Cache.Add(url, data)
 		if err != nil {
 			return err
 		}
 	} else {
-		cfg.logger.Info("URL Cached : " + key)
+		cfg.logger.Info("URL Cached : " + url)
 	}
-	locations, err := getJSON(data)
+	locations, err := getLocation(data)
 	if err != nil {
 		return err
 	}
@@ -84,28 +84,28 @@ func ActionNextMap(cfg *config) error {
 	return nil
 }
 
-func ActionPrevMap(cfg *config) error {
+func PrevMapAction(cfg *config) error {
 	if cfg.Prev == "" {
 		fmt.Println("you're on the first page")
 		return nil
 	}
 
-	key := cfg.Prev
+	url := cfg.Prev
 	var err error
 
-	data, ok := cfg.Cache.Get(key)
+	data, ok := cfg.Cache.Get(url)
 	if !ok {
-		cfg.logger.Info("URL Request: " + key)
-		data, err = getBytes(key)
-		cfg.Cache.Add(key, data)
+		cfg.logger.Info("URL Request: " + url)
+		data, err = getBytes(url)
+		cfg.Cache.Add(url, data)
 		if err != nil {
 			return err
 		}
 	} else {
-		cfg.logger.Info("URL Cached : " + key)
+		cfg.logger.Info("URL Cached : " + url)
 	}
 
-	locations, err := getJSON(data)
+	locations, err := getLocation(data)
 	if err != nil {
 		return err
 	}

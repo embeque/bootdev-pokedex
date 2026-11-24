@@ -11,11 +11,12 @@ import (
 const pokeapi = "https://pokeapi.co/api/v2/"
 
 type config struct {
-	registry map[string]cliCommand
-	Next     string
-	Prev     string
-	Cache    pokecache.Cache
-	logger   *slog.Logger
+	registry  map[string]cliCommand
+	Next      string
+	Prev      string
+	Cache     pokecache.Cache
+	logger    *slog.Logger
+	arguments []string
 }
 
 func main() {
@@ -26,12 +27,17 @@ func main() {
 		"map": {
 			name:        "map",
 			description: "List the Location Areas of Map",
-			callback:    ActionNextMap,
+			callback:    NextMapAction,
 		},
 		"mapb": {
 			name:        "mapb",
 			description: "List the previous Location Areas of Map",
-			callback:    ActionPrevMap,
+			callback:    PrevMapAction,
+		},
+		"explore": {
+			name:        "explore",
+			description: "Explore the given Area for Pokemons",
+			callback:    ExploreAction,
 		},
 		"help": {
 			name:        "help",
