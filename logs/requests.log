@@ -1,1 +1,13 @@
-{"time":"2026-11-24T20:46:17.328930923+05:00","level":"INFO","msg":"URL Request: https://pokeapi.co/api/v2/pokemon/squirtle"}
+{"time":"2026-11-24T21:14:38.733243353+05:00","level":"INFO","msg":"URL Request: https://pokeapi.co/api/v2/location-area?offset=0&limit=20"}
+{"time":"2026-11-24T21:14:45.561705007+05:00","level":"INFO","msg":"URL Request: https://pokeapi.co/api/v2/location-area/mt-coronet-1f-route-207"}
+{"time":"2026-11-24T21:14:58.46506209+05:00","level":"INFO","msg":"URL Request: https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:06.021404361+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:07.027169816+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:10.678511478+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:11.539044583+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:12.244274426+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:13.170640033+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:13.905995386+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:14.620164071+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:15.413402336+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}
+{"time":"2026-11-24T21:15:16.076584898+05:00","level":"INFO","msg":"URL Cached : https://pokeapi.co/api/v2/pokemon/zubat"}

@@ -45,6 +45,11 @@ func main() {
 			description: "Catch the given Pokemon",
 			callback:    CatchAction,
 		},
+		"inspect": {
+			name:        "inspect",
+			description: "Inspect the given Pokemon",
+			callback:    InspectAction,
+		},
 		"help": {
 			name:        "help",
 			description: "Displays a help message",
